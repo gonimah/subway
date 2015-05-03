@@ -50,9 +50,9 @@ class DirectionRoutingController < ApplicationController
 			latest_train_departure_time = arrival_time - (remaining_trip_time) * 60
 			departure_stop_id = get_stop_match(departure_stop)
 			destination_stop_id = get_stop_match(arrival_stop)
-			# times = get_departure_table(departure_stop_id.to_i,destination_stop_id.to_i, latest_train_departure_time)
-			times = get_departure_table(603,604, Time.parse("07:33:00"))
-			if times.length.empty?
+			times = get_departure_table(departure_stop_id.to_i,destination_stop_id.to_i, latest_train_departure_time)
+			# times = get_departure_table(603,604, Time.parse("07:33:00"))
+			if times.empty?
 				render json: {result: "No time found"}
 			else
 				results = Array.new
