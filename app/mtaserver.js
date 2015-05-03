@@ -14,7 +14,6 @@ var server = http.createServer(function (req, resp) {
     };
     
     var url_parts = url.parse(req.url, true);
-    //var line = url_parts.query.line;
     var orig = url_parts.query.orig;
     var dest = url_parts.query.dest;
 
@@ -32,21 +31,15 @@ var server = http.createServer(function (req, resp) {
                 var dir_idx = parseInt(orig) - parseInt(dest);
                 var direction = 'S';
                 
-                //console.log('dir_idex: ' + dir_idx);
-                
                 if(dir_idx > 0) {
                     direction = 'N';
                 }
                 
                 var station_code = orig + direction;
                 
-                console.log('direction: ' + direction);
-                console.log('station_code: ' + station_code);
-                
                 feed.entity.forEach(function(entity) {
 
                     if (entity.trip_update) {
-                        //console.log(entity.trip_update.trip.trip_id);
 
                         var id_split = entity.trip_update.trip.trip_id.split('_');
                         var line = id_split[1][0].split('.')[0];
