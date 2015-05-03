@@ -22,7 +22,7 @@ import java.util.List;
 
 public class ApiClient {
     private static final String TAG = ApiClient.class.getSimpleName();
-    private static final String API_URL = "http://www.mocky.io/v2/5545724e5c5bf0ec04ef880f?";
+    private static final String API_URL = "http://www.mocky.io/v2/554610d35c5bf08411ef8822?";
     private static final DateTimeFormatter DATE_FORMAT = DateTimeFormat.forPattern("YYYY-MM-dd-HH-mm-ss");
 
     private final ApiResponseParser mApiResponseParser;

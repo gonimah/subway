@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<com.gonimah.subwayalerts.widgets.StyledTextView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@android:id/text1"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_gravity="center_horizontal"
+    android:text="Home"
+    android:textColor="@color/subway"
+    android:textSize="52sp"/>

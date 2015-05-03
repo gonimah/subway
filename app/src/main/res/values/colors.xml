@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="ten_percent_black">#1a000000</color>
+    <color name="ninety_percent_white">#e6ffffff</color>
+    <color name="subway">#9F5D6D</color>
+</resources>

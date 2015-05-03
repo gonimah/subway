@@ -9,18 +9,21 @@ import com.gonimah.subwayalerts.models.TravelInformation;
 
 import org.joda.time.DateTime;
 import org.joda.time.Period;
+import org.joda.time.format.DateTimeFormat;
+import org.joda.time.format.DateTimeFormatter;
 
 public class NotificationUtils {
+    private static final DateTimeFormatter DATE_FORMAT = DateTimeFormat.forPattern("HH:mm");
 
     public static Notification createNotification(Context context, TravelInformation travelInformation) {
         DateTime now = DateTime.now();
         DateTime timeToLeave = travelInformation.getTrainTime().minusMinutes(travelInformation.getSubwayStationCommuteTimeInMin());
         Period diff = new Period(now, timeToLeave);
 
-        String title = String.format("Leave in %d minutes", diff.getMinutes());
-        String body = String.format("Walk to the %s station and take the %s train arriving at %s.",
+        String title = String.format("Leave in %d minutes!", diff.getMinutes());
+        String body = String.format("Walk to %s and take the %s train arriving at %s.",
                 travelInformation.getSubwayStationName(), travelInformation.getTrainName(),
-                travelInformation.getTrainTime());
+                travelInformation.getTrainTime().toString(DATE_FORMAT));
 
         return new NotificationCompat.Builder(context)
                 .setSmallIcon(R.drawable.map_icon)
